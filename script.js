@@ -27,7 +27,7 @@ alert("Su Burger Hero ha sido creada!\nEsta compuesta por una hamburguesa "+tipo
 function carne(){
     alert("Ahora seleccionaremos los ingredientes de su hamburguesa heroica")
     let opcion = parseInt(prompt("Tipo de Carne = 1. Vaca - 2. Cerdo - 3. Veggie"));       
-    while (!opcion === 1 || !opcion === 2 || !opcion === 3){
+    while (opcion !== 1 && opcion !== 2 && opcion !== 3){
         alert("Opcion no valida. Intentemos nuevamente.")
         opcion = parseInt(prompt("Tipo de Carne = 1. Vaca - 2. Cerdo - 3. Veggie"));
     }
@@ -40,16 +40,19 @@ function carne(){
             break;
         case 3:
             tipoCarne = veggie;
-            break;           
+            break; 
+        default:
+            alert("Opcion no valida. Intentemos nuevamente")
+            opcion = parseInt(prompt("Tipo de Carne = 1. Vaca - 2. Cerdo - 3. Veggie"));
     }    
     return tipoCarne;
 }
 
 function verduras(){
     let opcion = parseInt(prompt("Verduras = 1. Tomate - 2. Lechuga - 3. Pepino"))
-    while (!opcion === 1 || !opcion === 2 || !opcion === 3){
+    while (opcion !== 1 && opcion !== 2 && opcion !== 3){
         alert("Opcion no valida. Intentemos nuevamente")
-        opcion = parseInt(prompt("Primer Ingrediente = 1. Tomate - 2. Lechuga - 3. Pepino - 4. Saltar ingrediente"));
+        opcion = parseInt(prompt("Primer Ingrediente = 1. Tomate - 2. Lechuga - 3. Pepino"));
     }
     switch(opcion){
         case 1:
@@ -60,14 +63,17 @@ function verduras(){
             break;
         case 3:
             ingrePri = "Pepino";
-            break;                     
+            break;
+        default:
+            alert("Opcion no valida. Intentemos nuevamente")
+            opcion = parseInt(prompt("Verduras = 1. Tomate - 2. Lechuga - 3. Pepino"));                     
     }    
     return ingrePri;
 }
 
 function quesos(){
     let opcion = parseInt(prompt("Quesos = 1. Cheddar - 2. Brie - 3. Tibo"))
-    while (!opcion === 1 || !opcion === 2 || !opcion === 3){
+    while (opcion !== 1 && opcion !== 2 && opcion !== 3){
         alert("Opcion no valida. Intentemos nuevamente")
         opcion = parseInt(prompt("Quesos = 1. Cheddar - 2. Brie - 3. Tibo"));
     }
@@ -80,14 +86,17 @@ function quesos(){
             break;
         case 3:
             ingreSeg = "Tibo";
-            break;        
+            break; 
+        default:
+            alert("Opcion no valida. Intentemos nuevamente")
+            opcion = parseInt(prompt("Quesos = 1. Cheddar - 2. Brie - 3. Tibo"));
     }    
     return ingreSeg;
 }
 
 function size(){
     let opcion = parseInt(prompt("Tamaño: 1. Regular - 2. Large - 3. Extra Large"))
-    while (!opcion === 1 || !opcion === 2 || !opcion === 3){
+    while (opcion !== 1 && opcion !== 2 && opcion !== 3){
     alert("Opcion no valida. Intentemos nuevamente")
     opcion = parseInt(prompt("Tamaño: 1. Regular - 2. Large - 3. Extra Large"));
     }                
@@ -100,7 +109,10 @@ function size(){
             break;
         case 3:
             tamanio = "XL";
-            break;   
+            break;
+        default:
+            alert("Opcion no valida. Intentemos nuevamente")
+            opcion = parseInt(prompt("Tamaño: 1. Regular - 2. Large - 3. Extra Large"));
     }    
 return tamanio;
 }
@@ -117,5 +129,3 @@ function precio(precioBase,tamanio){
     }
     return precioFinal;
 }
-
-
